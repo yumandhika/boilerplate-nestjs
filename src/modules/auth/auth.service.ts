@@ -65,6 +65,19 @@ export class AuthService {
     }
   }
 
+  async updateRtHashToNull(userId: any): Promise<void> {
+    try {
+      return await this.userModel.findByIdAndUpdate(
+        userId, {
+          refresh_token: null
+        }
+      )
+    } catch (e) {
+      Logger.error("[AUTH][SERVICE][UPDATE][USER-REFRESH-TOKEN]:", e);
+      return null
+    }
+  }
+
   async getTokens(userId: any, email: string): Promise<Tokens> {
     try {
       const jwtPayload: JwtPayload = {

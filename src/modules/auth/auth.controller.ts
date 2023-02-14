@@ -133,4 +133,35 @@ export class AuthController {
     }
   }
 
+  
+  // @Post('logout')
+  // @UsePipes(ValidationPipe)
+  // @ApiOperation({
+  //   summary: 'logout to the application' , 
+  //   description: 'Use this endpoint to logout to the application. Provide your user id to obtain an authorization token',
+  // })
+  // async logout(@GetCurrentUserId() userId: any, @Response() res): Promise<boolean> {
+
+  //   let response : any = {
+  //     code : 500,
+  //     message : null
+  //   };
+
+  //   try {
+
+  //     this.authService.updateRtHashToNull(userId);
+  //     response.code = 200;
+  //     response.message = 'Success Logout';
+  //     return res.json(payloadResponse(response.code, response.message)).status(response.code)
+
+  //   } catch (error){
+
+  //     response.code = 500;
+  //     response.message = null;
+  //     Logger.error("[AUTH][CONTROLLER][SIGNUP][ERROR]:", error);
+  //     return res.json(payloadResponse(response.code, response.message)).status(response.code)
+
+  //   } 
+  // }
+
 }
